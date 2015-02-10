@@ -44,10 +44,11 @@
 #
 
 class varnish (
-  $start         = 'yes',
-  $nfiles        = '131072',
-  $memlock       = '82000',
-  $storage_type  = 'malloc',
+  $start                        = 'yes',
+  $enable                       = 'true',
+  $nfiles                       = '131072',
+  $memlock                      = '82000',
+  $storage_type                 = 'malloc',
   $varnish_vcl_conf             = '/etc/varnish/default.vcl',
   $varnish_listen_address       = '',
   $varnish_listen_port          = '6081',
@@ -80,7 +81,8 @@ class varnish (
 
   # enable Varnish service
   class { 'varnish::service':
-    start => $start,
+    start   => $start,
+    enable  => $enable,
   }
 
   # mount shared memory log dir as tempfs
