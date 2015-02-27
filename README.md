@@ -1,3 +1,7 @@
+# puppet-varnish
+
+[![Build Status](https://travis-ci.org/sedan07/puppet-varnish.svg?branch=master)](https://travis-ci.org/sedan07/puppet-varnish)
+
 ##Table of Contents
 1. [Overview](#overview)
 2. [Install Varnish](#install-varnish)
@@ -176,7 +180,6 @@ For more details on parameters, check class varnish.
 
 ## Development
   Contributions and patches are welcome!  
-  All new code goes into branch develop.  
 
 ## Contributors
 - Max Horlanchuk <max.horlanchuk@gmail.com>
