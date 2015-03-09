@@ -8,8 +8,14 @@ describe 'varnish::backend', :type => :define do
   let(:facts) { { :concat_basedir => '/dne' } }
   let(:title) { 'test' }
   
-  context("expected behaviour") do
+  context("expected behaviour when host specified as IP") do
     let(:params) { { :host => '192.168.10.14', :port => '8080' } }
+    it { should contain_file('/etc/varnish/includes/backends.vcl') }
+    it { should contain_concat__fragment('test-backend') }
+  end
+
+  context("expected behaviour when host specified as hostname") do
+    let(:params) { { :host => 'localhost', :port => '8080' } }
     it { should contain_file('/etc/varnish/includes/backends.vcl') }
     it { should contain_concat__fragment('test-backend') }
   end
